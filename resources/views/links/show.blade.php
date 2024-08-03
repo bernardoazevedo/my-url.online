@@ -19,8 +19,9 @@
 
             <!-- Page Heading -->
             <header class="bg-white dark:bg-gray-800 shadow text-gray-800 dark:text-gray-200">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $name }}
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex space-x-2">
+                    <a href="/"><img src="{{ url('/logo.jpg') }}" height="40" width="40" alt="Logo"></a>
+                    <p class="self-center">{{ $name }}</p>
                 </div>
             </header>
 

@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
+    <div class="py-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
             <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
                 <div class="max-w-xl">
@@ -15,8 +15,23 @@
         </div>
     </div>
 
-    <div class="py-12">
+    <div class="py-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
+            <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
+                <div class="max-w-xl text-gray-800 dark:text-gray-200 text-lg">
+                    <x-nav-link href="{{ env('APP_URL') .'/p/'. Auth::user()->username }}" target="_blank">
+                        <p class="text-lg ">View my page</p>
+                    </x-nav-link>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="py-6">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
+            <div class="px-4 text-gray-800 dark:text-gray-200 text-xl font-medium">
+                Active links
+            </div>
             @foreach ($userLinks as $link)
                 <div class="p-4 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 shadow sm:rounded-lg">
                     <div class="flex flex-col space-y-3">
