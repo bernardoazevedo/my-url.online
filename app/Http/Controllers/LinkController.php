@@ -48,9 +48,19 @@ class LinkController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Link $link)
+    public function show(String $username): View
     {
-        //
+        $user = User::where('username', $username)
+                    ->take(1)
+                    ->get();
+        $user_id = $user[0]->id;
+        $name = $user[0]->name;
+
+        return view('links.show', [
+            'userLinks' => Link::where('user_id', $user_id)->get(),
+            'username' => $username,
+            'name' => $name,
+        ]);
     }
 
     /**
