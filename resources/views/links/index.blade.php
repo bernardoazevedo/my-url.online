@@ -28,7 +28,7 @@
     </div>
 
     <div class="py-6">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-4">
             <div class="px-4 text-gray-800 dark:text-gray-200 text-xl font-medium">
                 Active links
             </div>
