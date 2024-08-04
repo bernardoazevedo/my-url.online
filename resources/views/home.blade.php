@@ -1,45 +1,11 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<x-app-layout>
+    <h2 class="font-semibold text-2xl text-gray-800 dark:text-gray-200 leading-tight mt-4 text-center">
+        {{ __('Welcome to php-Links!') }}
+    </h2>
 
-    <title>Document</title>
+    <h3 class="font-semibold text-2xl text-gray-800 dark:text-gray-200 mx-4 mt-32">What we do?</h3>
+    <h3 class="font-semibold text-2xl text-gray-800 dark:text-gray-200 mx-4 mt-32">Benefits</h3>
+    <h3 class="font-semibold text-2xl text-gray-800 dark:text-gray-200 mx-4 mt-32">Content</h3>
+    <h3 class="font-semibold text-2xl text-gray-800 dark:text-gray-200 mx-4 mt-32">Other content</h3>
 
-    @vite('resources/css/app.css')
-
-</head>
-<body class="text-black dark:text-white dark:bg-black">
-    @if (Route::has('login'))
-    <nav class="flex flex-1 justify-end">
-        @auth
-            <a
-                href="{{ url('/dashboard') }}"
-                class="rounded-md px-3 py-2 text-black hover:text-black/70 dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-            >
-                Dashboard
-            </a>
-        @else
-            <a
-                href="{{ route('login') }}"
-                class="rounded-md px-3 py-2 text-black hover:text-black/70 dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-            >
-                Log in
-            </a>
-
-            @if (Route::has('register'))
-                <a
-                    href="{{ route('register') }}"
-                    class="rounded-md px-3 py-2 text-black hover:text-black/70 dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                >
-                    Register
-                </a>
-            @endif
-        @endauth
-    </nav>
-    @endif
-
-    <h1 class="text-4xl">welcome to php-links!</h1>
-</body>
-</html>
+</x-app-layout>
