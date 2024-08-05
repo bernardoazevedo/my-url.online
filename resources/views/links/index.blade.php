@@ -35,9 +35,16 @@
             @foreach ($userLinks as $link)
                 <div class="p-4 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 shadow sm:rounded-lg">
                     <div class="flex flex-col space-y-3">
-                        <x-nav-link href="{{ 'https://'.$link->url }}" target="_blank">
-                            <p class="text-lg ">{{ $link->text }}</p>
-                        </x-nav-link>
+                        <div class="flex flex-row justify-between">
+                            <x-nav-link href="{{ 'https://'.$link->url }}" target="_blank">
+                                <p class="text-lg ">{{ $link->text }}</p>
+                            </x-nav-link>
+                            @if ($link->user->is(auth()->user()))
+                                <a href="{{ route('links.edit', $link) }}">
+                                    <x-secondary-button>{{ __('Edit link') }}</x-secondary-button>
+                                </a>
+                            @endif
+                        </div>
 
                         <div>
                             <div class="flex items-center">
