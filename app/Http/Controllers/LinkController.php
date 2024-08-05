@@ -8,7 +8,7 @@ use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class LinkController extends Controller
 {
@@ -66,17 +66,30 @@ class LinkController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Link $link)
+    public function edit(Link $link): View
     {
-        //
+        Gate::authorize('update', $link);
+
+        return view('links.edit', [
+            'link' => $link,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Link $link)
+    public function update(Request $request, Link $link): RedirectResponse
     {
-        //
+        Gate::authorize('update', $link);
+
+        $validated = $request->validate([
+            'url' => 'required|string|max:255',
+            'text' => 'required|string|max:255',
+        ]);
+
+        $link->update($validated);
+
+        return redirect(route('links.index'));
     }
 
     /**
