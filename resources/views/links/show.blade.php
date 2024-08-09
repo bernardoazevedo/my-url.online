@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'LinksOnline') }}</title>
+        <link rel="shortcut icon" href="{{ url('/logo.svg') }}" type="image/x-icon">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -20,7 +21,7 @@
             <!-- Page Heading -->
             <header class="bg-white dark:bg-gray-800 shadow text-gray-800 dark:text-gray-200">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex space-x-2">
-                    <a href="/"><img src="{{ url('/logo.jpg') }}" height="40" width="40" alt="Logo"></a>
+                    <a href="/"><img src="{{ url('/logo.svg') }}" height="40" width="40" alt="Logo"></a>
                     <p class="self-center">{{ $name }}</p>
                 </div>
             </header>
