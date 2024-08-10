@@ -21,6 +21,10 @@
                         <x-nav-link :href="route('links.index')" :active="request()->routeIs('links.index')">
                             {{ __('Links') }}
                         </x-nav-link>
+
+                        <x-nav-link href="{{ env('APP_URL') .':8000/'. Auth::user()->username }}" :active="request()->routeIs('username')">
+                            {{ __('My Page') }}
+                        </x-nav-link>
                     @else
                         <x-nav-link :href="route('login')" :active="request()->routeIs('login')">
                             {{ __('Login') }}
@@ -95,6 +99,9 @@
                 </x-responsive-nav-link>
                 <x-responsive-nav-link :href="route('links.index')" :active="request()->routeIs('links.index')">
                     {{ __('Links') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link href="{{ env('APP_URL') .':8000/'. Auth::user()->username }}" :active="request()->routeIs('username')">
+                    {{ __('My Page') }}
                 </x-responsive-nav-link>
             </div>
         @else

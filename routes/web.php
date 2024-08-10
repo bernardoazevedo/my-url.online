@@ -22,6 +22,7 @@ Route::resource('links', LinkController::class)
     ->only(['index', 'store', 'edit', 'update'])
     ->middleware(['auth', 'verified']);
 
-Route::get('/{username}', [LinkController::class, 'show']);
+Route::get('/{username}', [LinkController::class, 'show'])
+    ->name('username');
 
 require __DIR__.'/auth.php';
