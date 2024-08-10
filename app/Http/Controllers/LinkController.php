@@ -53,14 +53,20 @@ class LinkController extends Controller
         $user = User::where('username', $username)
                     ->take(1)
                     ->get();
-        $user_id = $user[0]->id;
-        $name = $user[0]->name;
 
-        return view('links.show', [
-            'userLinks' => Link::where('user_id', $user_id)->get(),
-            'username' => $username,
-            'name' => $name,
-        ]);
+        if(!isset($user[0])){
+            abort(404);
+        }
+        else{
+            $user_id = $user[0]->id;
+            $name = $user[0]->name;
+            
+            return view('links.show', [
+                'userLinks' => Link::where('user_id', $user_id)->get(),
+                'username' => $username,
+                'name' => $name,
+            ]);
+        }
     }
 
     /**
