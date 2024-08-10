@@ -18,16 +18,22 @@
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
 
+            @include('layouts.navigation')
+
             <!-- Page Heading -->
-            <header class="bg-white dark:bg-gray-800 shadow text-gray-800 dark:text-gray-200">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex space-x-2">
-                    <a href="/"><img src="{{ url('/logo.svg') }}" height="40" width="40" alt="Logo"></a>
-                    <p class="self-center">{{ $name }}</p>
-                </div>
-            </header>
+            @isset($header)
+                <header class="bg-white dark:bg-gray-800 shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        {{ $header }}
+                    </div>
+                </header>
+            @endisset
 
             <div class="py-12">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
+                    <h1 class="px-4 text-gray-800 dark:text-gray-200 text-xl font-medium">
+                        {{ $username }} links
+                    </h1>
                     @foreach ($userLinks as $link)
                         <div class="p-4 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 shadow sm:rounded-lg">
                             <div class="flex flex-col space-y-3">
