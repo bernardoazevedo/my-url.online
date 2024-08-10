@@ -23,7 +23,7 @@
         <div class="py-6">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-4">
                 <div class="px-4 text-zinc-800 dark:text-zinc-200 text-xl font-medium">
-                    {{ $username}} haven't registered any links yet 
+                    {{ $username }} haven't registered any links yet
                 </div>
             </div>
         </div>

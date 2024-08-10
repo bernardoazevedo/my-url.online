@@ -9,12 +9,25 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
             <div class="p-4 sm:p-8 bg-white dark:bg-zinc-800 shadow sm:rounded-lg">
                 <div class="max-w-xl">
-                    @include('links.partials.create-link-form')
+                    <p class="text-zinc-800 dark:text-zinc-200 inline">Link to your page: </p>
+                    <x-nav-link :href="route('links.show', ['username' => Auth::user()->username])">
+                        {{ route('links.show', ['username' => Auth::user()->username]) }}
+                    </x-nav-link>
                 </div>
             </div>
         </div>
     </div>
 
+    <div class="py-6">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
+            <div class="p-4 sm:p-8 bg-white dark:bg-zinc-800 shadow sm:rounded-lg">
+                <div class="max-w-xl">
+                    @include('links.partials.create-link-form')
+                </div>
+            </div>
+        </div>
+    </div>
+    
     @if(@isset($userLinks[0]))
         <div class="py-6">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-4">
