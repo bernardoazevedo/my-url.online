@@ -12,6 +12,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/p/{username}', [LinkController::class, 'show'])->name('links.show');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -21,8 +23,5 @@ Route::middleware('auth')->group(function () {
 Route::resource('links', LinkController::class)
     ->only(['index', 'store', 'edit', 'update'])
     ->middleware(['auth', 'verified']);
-
-Route::get('/{username}', [LinkController::class, 'show'])
-    ->name('username');
 
 require __DIR__.'/auth.php';

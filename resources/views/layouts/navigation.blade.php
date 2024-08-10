@@ -22,7 +22,7 @@
                             {{ __('Links') }}
                         </x-nav-link>
 
-                        <x-nav-link href="{{ env('APP_URL') .':8000/'. Auth::user()->username }}" :active="request()->routeIs('username')">
+                        <x-nav-link :href="route('links.show', ['username' => Auth::user()->username])" :active="request()->routeIs('links.show')">
                             {{ __('My Page') }}
                         </x-nav-link>
                     @else
@@ -100,7 +100,7 @@
                 <x-responsive-nav-link :href="route('links.index')" :active="request()->routeIs('links.index')">
                     {{ __('Links') }}
                 </x-responsive-nav-link>
-                <x-responsive-nav-link href="{{ env('APP_URL') .':8000/'. Auth::user()->username }}" :active="request()->routeIs('username')">
+                <x-responsive-nav-link :href="route('links.show', ['username' => Auth::user()->username])" :active="request()->routeIs('links.show')">
                     {{ __('My Page') }}
                 </x-responsive-nav-link>
             </div>
@@ -124,7 +124,7 @@
                 </div>
 
                 <div class="mt-3 space-y-1">
-                    <x-responsive-nav-link :href="route('profile.edit')">
+                    <x-responsive-nav-link :href="route('profile.edit')" :active="request()->routeIs('profile.edit')">
                         {{ __('Profile') }}
                     </x-responsive-nav-link>
                     
