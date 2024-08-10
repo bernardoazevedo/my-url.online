@@ -8,10 +8,6 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::get('/p/{username}', [LinkController::class, 'show'])->name('links.show');
 
 Route::middleware('auth')->group(function () {
