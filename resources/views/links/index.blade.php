@@ -1,13 +1,13 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+        <h2 class="font-semibold text-xl text-zinc-800 dark:text-zinc-200 leading-tight">
             {{ __('Links') }}
         </h2>
     </x-slot>
 
     <div class="py-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-            <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
+            <div class="p-4 sm:p-8 bg-white dark:bg-zinc-800 shadow sm:rounded-lg">
                 <div class="max-w-xl">
                     @include('links.partials.create-link-form')
                 </div>
@@ -18,11 +18,11 @@
     @if(@isset($userLinks[0]))
         <div class="py-6">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-4">
-                <div class="px-4 text-gray-800 dark:text-gray-200 text-xl font-medium">
+                <div class="px-4 text-zinc-800 dark:text-zinc-200 text-xl font-medium">
                     Active links
                 </div>
                 @foreach ($userLinks as $link)
-                    <div class="p-4 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 shadow sm:rounded-lg">
+                    <div class="p-4 bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 shadow sm:rounded-lg">
                         <div class="flex flex-col space-y-3">
                             <div class="flex flex-row justify-between">
                                 <x-nav-link href="{{ 'https://'.$link->url }}" target="_blank">
@@ -55,7 +55,7 @@
     @else
         <div class="py-6">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-4">
-                <div class="px-4 text-gray-800 dark:text-gray-200 text-xl font-medium">
+                <div class="px-4 text-zinc-800 dark:text-zinc-200 text-xl font-medium">
                     You haven't registered any links yet
                 </div>
             </div>
