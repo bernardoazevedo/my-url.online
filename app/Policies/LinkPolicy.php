@@ -45,7 +45,7 @@ class LinkPolicy
      */
     public function delete(User $user, Link $link): bool
     {
-        //
+        return $this->update($user, $link);
     }
 
     /**

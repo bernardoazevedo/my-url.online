@@ -30,7 +30,7 @@
                                 </x-nav-link>
                                 @if ($link->user->is(auth()->user()))
                                     <a href="{{ route('links.edit', $link) }}">
-                                        <x-secondary-button>{{ __('Edit link') }}</x-secondary-button>
+                                        <x-secondary-button>{{ __('Edit') }}</x-secondary-button>
                                     </a>
                                 @endif
                             </div>

@@ -25,7 +25,7 @@
         </div>
 
         <div class="space-x-2">
-            <x-primary-button>{{ __('Update link') }}</x-primary-button>
+            <x-primary-button>{{ __('Update') }}</x-primary-button>
             <a href="{{ route('links.index') }}"><x-secondary-button>{{ __('Cancel') }}</x-secondary-button></a>
         </div>
     </form>
