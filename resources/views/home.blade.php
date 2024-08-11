@@ -1,6 +1,10 @@
 <x-app-layout>
+    <x-slot:title>
+        MyUrl
+    </x-slot>
+
     <h2 class="font-semibold text-2xl text-zinc-800 dark:text-zinc-200 leading-tight mt-16 text-center">
-        {{ __('Welcome to php-Links!') }}
+        {{ __('Welcome to MyUrl!') }}
     </h2>
 
     <div class="py-6">
