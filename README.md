@@ -1,6 +1,6 @@
 # Welcome to MyUrl!
 
-## Menage your links in one page
+## Manage your links in one page
 Here you can save multiple links and share only our link to reach them.
 
 ## Unlimited links
