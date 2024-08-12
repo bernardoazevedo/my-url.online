@@ -12,7 +12,7 @@
             <div class="p-4 sm:p-8 bg-white dark:bg-zinc-800 shadow sm:rounded-lg">
                 <div class="max-w-xl">
                     <h3 class="font-semibold text-xl text-zinc-800 dark:text-zinc-200">
-                        Menage your links in one page
+                        Manage your links in one page
                     </h3>
                     @auth
                         <div class="mt-4">
