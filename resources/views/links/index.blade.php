@@ -42,7 +42,7 @@
                     <div class="p-4 bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 shadow sm:rounded-lg">
                         <div class="flex flex-col space-y-3">
                             <div class="flex flex-row justify-between">
-                                <x-nav-link href="{{ 'https://'.$link->url }}" target="_blank">
+                                <x-nav-link href="{{ $link->url }}" target="_blank">
                                     <p class="text-lg ">{{ $link->text }}</p>
                                 </x-nav-link>
                                 @if ($link->user->is(auth()->user()))
