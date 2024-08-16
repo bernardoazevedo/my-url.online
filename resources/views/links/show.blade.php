@@ -15,7 +15,7 @@
                 @foreach ($userLinks as $link)
                     <div class="p-4 bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 shadow sm:rounded-lg">
                         <div class="flex flex-col space-y-3">
-                            <x-show-link href="{{ 'https://'.$link->url }}" target="_blank">
+                            <x-show-link href="{{ $link->url }}" target="_blank">
                                 <p class="text-lg ">{{ $link->text }}</p>
                             </x-show-link>        
                         </div>
