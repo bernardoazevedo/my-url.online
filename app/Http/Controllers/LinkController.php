@@ -34,6 +34,16 @@ class LinkController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        $url = $request->input('url');
+        
+        if(stripos($url, 'http') !== 0){
+            $url = 'https://'.$url;
+            
+            $request->merge([
+                'url' => $url,
+            ]);
+        }
+
         $validated = $request->validate([
             'url' => 'required|string|max:255',
             'text' => 'required|string|max:255',
